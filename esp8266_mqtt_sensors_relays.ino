@@ -1,8 +1,9 @@
 /*  
  *  ESP8266 + DHT11/22 + 4 RELAYS + MQTT + Home Assistant
  *  Author: EzeLibrandi
+ *  Based on: https://github.com/projetsdiy/esp8266-dht22-mqtt-home-assistant
  *  Date: 05/08/2020
- *  Version 1.0
+ *  Version 1.0.1
  *  Tested and running with the following libraries/boards:
  *  DHT Library v1.3.1 
  *  Adafruit Unified Sensors v1.0.3
@@ -22,8 +23,8 @@
 bool debug = false;  
 
 // Wifi Settings
-#define wifi_ssid "SSID name"
-#define wifi_password "wifi passowrd"
+#define wifi_ssid "wifi ssid name"
+#define wifi_password "wifi password"
 
 //MQTT Broker Settings
 #define mqtt_server "XXX.XXX.XXX.XXX"
@@ -101,7 +102,7 @@ void reconnect() {
     } else {
       Serial.print("Error: ");
       Serial.println(client.state());
-      Serial.println("Wait 5 secondes before to retry...");
+      Serial.println("Wait 5 seconds before to retry...");
       delay(5000);
     }
   }
