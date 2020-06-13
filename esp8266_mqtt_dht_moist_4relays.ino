@@ -202,7 +202,7 @@ void loop(){
       Serial.print(h);
     }
     // Read moisture sensor
-    if (now - lastSoil > 1000 * 60 * 5 || moist_readeable < 70){
+    if (now - lastSoil > 1000 * 3600 * 5 || moist_readeable < 25){
       lastSoil = now;
       int moist = analogRead(moist_sensor_pin);
       moist_readeable = map(moist, 1024, 300, 0, 100);
